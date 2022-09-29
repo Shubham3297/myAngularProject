@@ -1,0 +1,73 @@
+<carousel>
+    <slide>
+        <img src="../../assets/05.jpg" alt="first slide" style="display: block; width: 100%; height: 500px;">
+    </slide>
+    <slide>
+        <img src="../../assets/06.jpg" alt="second slide" style="display: block; width: 100%; height: 500px;">
+    </slide>
+    <slide>
+        <img src="../../assets/04.jpg" alt="third slide" style="display: block; width: 100%; height: 500px;">
+    </slide>
+</carousel>
+<hr>
+
+<h3>{{myName}}</h3>
+
+<img [src]="imgPath" [alt]="imgName">
+<br>
+<br>
+
+<button type="button" (click)="greeting()">Click on me</button>
+<hr>
+
+<input type="text" name="myProduct" [(ngModel)]="product"> {{product}}
+<br>
+<br>
+<hr>
+
+
+<img [src]="imgPath1" [alt]="imgName1">
+<div><strong>{{imgName1}}</strong></div>
+
+<br>
+<br>
+<button type="button" class="btn btn-primary" (click)="change()">Change</button>
+
+<br>
+
+<hr>
+<button type="button" class="btn btn-primary" (click)="type()">Cars</button><br>
+<hr>
+<button type="button" class="btn btn-primary" (click)="type1()">Bikes</button>
+<hr>
+
+<div *ngIf="cond1">
+    <ul *ngFor="let A of cars">
+        <li (click)=select(A)>{{A}}</li>
+    </ul>
+</div>
+
+<div *ngIf="cond2">
+    <ul *ngFor="let B of bikes">
+        <li (click)=select(B)>{{B}}</li>
+    </ul>
+</div>
+<hr>
+
+<div *ngIf="cond1">
+    <div [ngSwitch]="myItem">
+        <div *ngSwitchCase="'TOYOTA'">You have selected <strong>TOYOTA</strong></div>
+        <div *ngSwitchCase="'BMW'">You have selected <strong>BMW</strong></div>
+        <div *ngSwitchCase="'MARUTI'">You have selected <strong>MARUTI</strong></div>
+        <div *ngSwitchCase="'TATA'">You have selected <strong>TATA</strong></div>
+    </div>
+</div>
+
+<div *ngIf="cond2">
+    <div [ngSwitch]="myItem">
+        <div *ngSwitchCase="'HONDA'">You have selected <strong>HONDA</strong></div>
+        <div *ngSwitchCase="'BAJAJ'">You have selected <strong>BAJAJ</strong></div>
+        <div *ngSwitchCase="'HERO'">You have selected <strong>HERO</strong></div>
+        <div *ngSwitchCase="'SUZUKI'">You have selected <strong>SUZUKI</strong></div>
+    </div>
+</div>

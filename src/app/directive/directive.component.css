@@ -1,0 +1,13 @@
+.textDanger{
+    color:red;
+}
+
+.textSuccess{
+    color: green;
+}
+
+.special:hover{
+    background-color: hotpink;
+    text-decoration: underline;
+    font-weight: 700;
+}

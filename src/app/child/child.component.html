@@ -1,0 +1,10 @@
+<p>child works!</p>
+
+<div>MSG From Parent : {{parentData}}</div>
+
+<form>
+    <label>Send message to Parent</label>
+    <input type="text" name="child" #data> <br>
+
+    <button type="button" class="btn btn-primary" (click)="sendData(data.value)">Send</button>
+</form>

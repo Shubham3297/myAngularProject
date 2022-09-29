@@ -1,0 +1,12 @@
+<p>counter-parent works!</p>
+
+<button type="button" class="btn btn-primary mx-4" (click)="increment()">Increment</button>
+<button type="button" class="btn btn-primary" (click)="decrement()">Decrement</button>
+
+<h4>{{message}}</h4>
+<app-counter></app-counter>
+
+<h2 appMyDirectory>Change My Color</h2>
+<input type="radio" name="color" (click)="colorChange('green')" value="green">Green
+<input type="radio" name="color" (click)="colorChange('blue')" value="blue">Blue
+<input type="radio" name="color" (click)="colorChange('pink')" value="pink">Pink

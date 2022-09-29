@@ -1,0 +1,58 @@
+<p>pipe works!</p>
+<!-- 1-Inbuild Pipe -->
+<!-- //string pipes// -->
+<div>{{msg}}</div>
+<div>UppearCase : <strong>{{msg | uppercase}}</strong></div>
+<div>LowerCase : <strong>{{msg | lowercase}}</strong></div>
+<div>TitleCase : <strong>{{msg | titlecase}}</strong></div>
+<div>Slice : <strong>{{msg | slice:5-15}}</strong></div>
+
+<!-- JSON PIPE -->
+<div>JOSN : <strong>{{employee | json}} </strong></div>
+
+<!-- Number Pipe -->
+<div>{{3.768 | number:'1.3-5'}}</div>
+<div>{{3.768 | number:'3.5-6'}}</div>
+<div>{{3.768 | number:'3.1-2'}}</div>
+
+<!-- Currency Pipe -->
+<div>{{100 |currency}}</div>
+<div>{{100 |currency:'GBP'}}</div>
+<div>{{100 |currency:'INR'}}</div>
+
+<!-- Date Pipe -->
+<div>{{d}}</div>
+<div>Date: <strong>{{d | date}} </strong></div>
+<div>ShortDate: <strong>{{d | date:'shortDate'}} </strong></div>
+<div>longDate: <strong>{{d | date:'longDate'}} </strong></div>
+
+
+<!-- 2- Custom Pipe -->
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let std of students">
+            <td (click)="setParameter(std)">{{std.id}}</td>
+            <td (click)="setParameter(std)">{{std.name |mygender:std.gender}}</td>
+            <td (click)="setParameter(std)">{{std.address}}</td>
+            <td (click)="setParameter(std)">{{std.gender}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+<!-- <div>
+    cube of any number : <strong>{{10 | mygender}}</strong>
+</div> -->
+<hr>
+<!-- <div>
+    Area of any circle: <strong>{{2 | mygender}}</strong>
+</div> -->

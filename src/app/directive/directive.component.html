@@ -1,0 +1,54 @@
+<p>directive works!</p>
+
+<h3 *ngIf="isCon">This is my ng directives</h3>
+
+<div *ngIf="isCon;then truepart;else falsepart">Use of ng-template</div>
+
+<ng-template #truepart>
+    This is true part
+</ng-template>
+
+<ng-template #falsepart>
+    This is false part
+</ng-template>
+
+<!-- <div *ngFor="let c of cars">{{c}}</div> -->
+
+<ul *ngFor="let c of cars">
+    <li (click)="setParameter(c)">{{c}}</li>
+</ul>
+
+<hr>
+
+<!-- <div [ngSwitch]="myCar">
+    <div *ngSwitchCase="'TATA'">You have selected TATA.</div>
+    <div *ngSwitchCase="'BMW'">You have selected BMW.</div>
+    <div *ngSwitchCase="'NANO'">You have selected NANO.</div>
+    <div *ngSwitchCase="'MARUTI'">You have selected MARUTI.</div>
+    <div *ngSwitchCase="'TOYOTA'">You have selected TOYOTA.</div>
+    <div *ngSwitchDefault>Invalid Choice</div>
+</div> -->
+
+
+<div [ngSwitch]="myCar">
+
+    <div *ngFor="let c of cars">
+        <div *ngSwitchCase="c">You have selected <strong [ngClass]="myClass">{{c}}</strong></div>
+    </div>
+
+    <div *ngSwitchDefault>Invalid Choice</div>
+</div>
+
+<hr>
+
+<div [ngStyle]="myStyle">This is ngStyle.</div>
+
+<hr>
+
+<h5>How to get input in ts file through reference variable</h5>
+<form>
+    <label>Enter Your Product :</label>
+    <input type="text" name="product" #prod>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="myProducts(prod.value)">Send</button>
+</form>

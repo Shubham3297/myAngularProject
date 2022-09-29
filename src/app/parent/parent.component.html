@@ -1,0 +1,16 @@
+<div class="container">
+    <p>parent works!</p>
+    <div>MSG From Child : {{childData}}</div>
+
+    <form>
+        <label>Send message to child</label>
+        <input type="text" name="parent" #data> <br>
+
+        <button type="button" class="btn btn-primary" (click)="sendData(data.value)">Send</button>
+    </form>
+
+    <hr>
+
+
+    <app-child (eventObj)="childData=$event" [parentData]="msg"></app-child>
+</div>

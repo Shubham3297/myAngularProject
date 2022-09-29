@@ -1,0 +1,81 @@
+<form [formGroup]="stdForm" (ngSubmit)="getData(stdForm.value)">
+    <div class="form-group">
+        <label>Enter Your Fullname :</label>
+        <input type="text" name="stdName" class="form-control" formControlName="stdName">
+        <div *ngIf="stdForm.get('stdName').invalid && stdForm.get('stdName').touched ">
+            <div class="alert alert-danger" *ngIf="stdForm.get('stdName').errors.required">
+                This field is required.
+            </div>
+            <div class="alert alert-danger" *ngIf="stdForm.get('stdName').errors.pattern">
+                Name field should contain charcter with min 3 and max 30.
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Select Your Courses :</label>
+        <select name="stdCourses" class="form-control" formControlName="stdCourses">
+            <option value="">Select Your Courses</option>
+            <option [value]="c" *ngFor="let c of courses">{{c}}</option>
+        </select>
+        <div *ngIf="stdForm.get('stdCourses').invalid && stdForm.get('stdCourses').touched">
+            <div class="alert alert-danger">
+                This field is required.
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-check form-group">
+        <label class="form-check-label">
+            <input type="checkbox" name="stdTerm" class="form-check-input" formControlName="stdTerm">
+            I am agree with your term and conditions.
+        </label>
+        <div *ngIf="stdForm.get('stdTerm').invalid && stdForm.get('stdTerm').touched">
+            <div class="alert alert-danger">
+                This field is required.
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <label>Enter Your Password :</label>
+        <input type="password" name="stdPassword" class="form-control" formControlName="stdPassword">
+        <div *ngIf="stdForm.get('stdPassword').invalid && stdForm.get('stdPassword').touched ">
+            <div class="alert alert-danger" *ngIf="stdForm.get('stdPassword').errors.required">
+                This field is required.
+            </div>
+            <div class="alert alert-danger" *ngIf="stdForm.get('stdPassword').errors.pattern">
+                Password format is wrong
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Enter Your Email :</label>
+        <input type="email" name="stdEmail" class="form-control" formControlName="stdEmail">
+        <div *ngIf="stdForm.get('stdEmail').invalid && stdForm.get('stdEmail').touched ">
+            <div class="alert alert-danger" *ngIf="stdForm.get('stdEmail').errors.required">
+                This field is required.
+            </div>
+            <div class="alert alert-danger" *ngIf="stdForm.get('stdEmail').errors.pattern">
+                Email format is wrong
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>Enter Your Contact :</label>
+        <input type="tel" name="stdContact" class="form-control" formControlName="stdContact">
+        <div *ngIf="stdForm.get('stdContact').invalid && stdForm.get('stdContact').touched ">
+            <div class="alert alert-danger" *ngIf="stdForm.get('stdContact').errors.required">
+                This field is required.
+            </div>
+            <div class="alert alert-danger" *ngIf="stdForm.get('stdContact').errors.pattern">
+                Contact format is wrong
+            </div>
+        </div>
+    </div>
+    <br>
+    <button type=" submit" class="btn btn-primary" [disabled]="stdForm.invalid">Submit</button>
+</form>

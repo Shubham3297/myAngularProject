@@ -1,0 +1,21 @@
+<div class="loginFrm">
+    <form style="margin-top: 10px;">
+        <div class="row">
+            <div class="col-4">
+                <label>User Id :</label>
+            </div>
+            <div class="col-6">
+                <input type="text" name="user" [(ngModel)]="user">
+            </div><br><br>
+            <div class="col-4">
+                <label>Password :</label>
+            </div>
+            <div class="col-6">
+                <input type="text" name="pass" [(ngModel)]="pass">
+            </div>
+        </div><br>
+        <div style="text-align: center;">
+            <button type="button" class="btn btn-primary" (click)="check()">Submit</button>
+        </div>
+    </form>
+</div>

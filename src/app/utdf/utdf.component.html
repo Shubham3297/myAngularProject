@@ -1,0 +1,83 @@
+<div class="container">
+    <form #stddata=ngForm (ngSubmit)="getStudentData(stddata.value)">
+        <div class="form-group">
+            <label>Enter Your Fullname :</label>
+            <input type="text" name="sname" #refsname="ngModel" class="form-control" pattern="[a-zA-Z ]{3,30}" ngModel
+                required>
+            <div *ngIf="refsname.invalid && refsname.touched">
+                <div class="alert alert-danger" *ngIf="refsname.hasError('required')">
+                    This field is required.
+                </div>
+                <div class="alert alert-danger" *ngIf="refsname.hasError('pattern')">
+                    Name field should contain only character with min 3 and max 30.
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Select Your Course :</label>
+            <select name="scourse" class="form-control" #refCourse="ngModel" ngModel required>
+                <option value="">Please Select Your Course</option>
+                <option [value]="c" *ngFor="let c of myCourses">{{c}}</option>
+            </select>
+            <div *ngIf="refCourse.invalid && refCourse.touched">
+                <div class="alert alert-danger">This field is required.</div>
+            </div>
+        </div>
+        <br>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" name="term" #refterm="ngModel" class="form-check-input" ngModel required>
+                I agree your term and conditions.
+                <div *ngIf="refterm.invalid && refterm.touched">
+                    <div class="alert alert-danger">This field is required.</div>
+                </div>
+            </label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Enter Your College Name :</label>
+            <input type="text" name="cname" #refcname="ngModel" class="form-control" pattern="[a-zA-Z ]{3,30}" ngModel
+                required>
+            <div *ngIf="refcname.invalid && refcname.touched">
+                <div class="alert alert-danger" *ngIf="refcname.hasError('required')">
+                    This field is required.
+                </div>
+                <div class="alert alert-danger" *ngIf="refcname.hasError('pattern')">
+                    Name field should contain only character with min 3 and max 30.
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Enter Your Email :</label>
+            <input type="email" name="email" #refemail="ngModel" class="form-control"
+                pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" ngModel required>
+            <div *ngIf="refemail.invalid && refemail.touched">
+                <div class="alert alert-danger" *ngIf="refemail.hasError('required')">
+                    This field is required.
+                </div>
+                <div class="alert alert-danger" *ngIf="refemail.hasError('pattern')">
+                    Email field should contain only character with min 3 and max 30.
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Enter Your Contact :</label>
+            <input type="tel" name="ftel" #refftel="ngModel" class="form-control" pattern="([0-9]{10,12})" ngModel
+                required>
+            <div *ngIf="refftel.invalid && refftel.touched">
+                <div class="alert alert-danger" *ngIf="refftel.hasError('required')">
+                    Telephone field is required.
+                </div>
+                <div class="alert alert-danger" *ngIf="refftel.hasError('pattern')">
+                    Telephone field should contain only Number 10.
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-primary" [disabled]="stddata.invalid">Submit</button>
+    </form>
+</div>

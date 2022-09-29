@@ -1,0 +1,104 @@
+{
+  "employees": [
+    {
+      "id": 104,
+      "name": "Shubham",
+      "post": "Python Developer",
+      "salary": 88000,
+      "gender": "male",
+      "address": "Solapur"
+    },
+    {
+      "id": 106,
+      "name": "Rakesh",
+      "post": "Node Develper",
+      "salary": "85000",
+      "gender": "male",
+      "address": "Pune"
+    },
+    {
+      "id": 107,
+      "name": "Varun",
+      "post": "Fullstack Developer",
+      "salary": "96000",
+      "gender": "male",
+      "address": "Pune"
+    },
+    {
+      "id": 108,
+      "name": "Rani",
+      "post": "angular developer",
+      "salary": "90000",
+      "gender": "female",
+      "address": "Pune"
+    },
+    {
+      "id": 110,
+      "name": "Kajal",
+      "post": "Web Developer",
+      "salary": "95200",
+      "gender": "female",
+      "address": "Pune"
+    },
+    {
+      "name": "Aditi",
+      "post": "Frontend Developer",
+      "salary": "85000",
+      "gender": "female",
+      "address": "Gowa",
+      "id": 111
+    },
+    {
+      "name": "Aditya",
+      "post": "Backend Developer",
+      "salary": "85000",
+      "gender": "male",
+      "address": "Pune",
+      "id": 112
+    },
+    {
+      "name": "Nalini",
+      "post": "Fullstack Developer",
+      "salary": "95200",
+      "gender": "female",
+      "address": "Gowa",
+      "id": 113
+    },
+    {
+      "name": "Nitin",
+      "post": "Jawa Developer",
+      "salary": "98200",
+      "gender": "male",
+      "address": "Dilhi",
+      "id": 114
+    },
+    {
+      "name": "Dipali",
+      "post": "Fullstack Developer",
+      "salary": "85000",
+      "gender": "male",
+      "address": "Pune",
+      "id": 115
+    },
+    {
+      "name": "Varun",
+      "post": "Node Develper",
+      "salary": "85000",
+      "gender": "male",
+      "address": "Pune",
+      "id": 116
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "user": "admin",
+      "password": "admin@123"
+    },
+    {
+      "id": 2,
+      "user": "hero",
+      "password": "hero@123"
+    }
+  ]
+}
